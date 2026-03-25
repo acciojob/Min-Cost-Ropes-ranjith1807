@@ -1,4 +1,4 @@
-function minCost(arr) { 
+function mincost(arr) { 
   let cost = 0;
   arr.sort((a, b) => a - b);
 
@@ -16,4 +16,4 @@ function minCost(arr) {
 
   return cost;
 }
-module.exports = { minCost };
+module.exports = { mincost };
