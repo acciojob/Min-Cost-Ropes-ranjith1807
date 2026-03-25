@@ -1,19 +1,25 @@
-function mincost(arr) { 
+function mincost(arr)
+{ 
+//write your code here
+// return the min cost
+	arr.sort((a, b) => a - b);
+
   let cost = 0;
-  arr.sort((a, b) => a - b);
 
   while (arr.length > 1) {
-    
     let first = arr.shift();
     let second = arr.shift();
 
     let sum = first + second;
     cost += sum;
 
-    arr.push(sum);
-    arr.sort((a, b) => a - b);
+    // insert in sorted order
+    let i = 0;
+    while (i < arr.length && arr[i] < sum) i++;
+    arr.splice(i, 0, sum);
   }
-
-  return cost;
+	return cost;
+  
 }
-module.exports = { mincost };
+
+module.exports=mincost;
